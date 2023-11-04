@@ -10,6 +10,7 @@ public class Consumer implements Runnable {
     public Consumer(Buffer buffer, int numberOfOperations) {
         this(buffer, numberOfOperations, Optional.empty());
     }
+
     public Consumer(Buffer buffer, int numberOfOperations, Optional<String> name) {
         this.buffer = buffer;
         this.numberOfOperations = numberOfOperations;
@@ -17,7 +18,7 @@ public class Consumer implements Runnable {
     }
 
     public void run() {
-        for(int i = 0; i < numberOfOperations; i++) {
+        for (int i = 0; i < numberOfOperations; i++) {
             String message = buffer.take();
             System.out.println(name + ": Taken message \"" + message + "\"");
         }

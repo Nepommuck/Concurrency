@@ -10,6 +10,7 @@ public class CounterThread extends Thread {
         incrementer = (operation >= 0) ? 1 : -1;
         numberOfIterations = Math.abs(operation);
     }
+
     @Override
     public void run() {
         super.run();

@@ -12,16 +12,16 @@ public class Task2 {
         Buffer buffer = new Buffer();
 
         List<Thread> producerThreads = IntStream.range(0, numberOfThreads)
-                .boxed()
-                .map(i -> new Producer(buffer, numberOfMessages, Optional.of("PRODUCER " + i)))
-                .map(Thread::new)
-                .toList();
+          .boxed()
+          .map(i -> new Producer(buffer, numberOfMessages, Optional.of("PRODUCER " + i)))
+          .map(Thread::new)
+          .toList();
 
         List<Thread> consumerThreads = IntStream.range(0, numberOfThreads)
-                .boxed()
-                .map(i -> new Consumer(buffer, numberOfMessages, Optional.of("CONSUMER " + i)))
-                .map(Thread::new)
-                .toList();
+          .boxed()
+          .map(i -> new Consumer(buffer, numberOfMessages, Optional.of("CONSUMER " + i)))
+          .map(Thread::new)
+          .toList();
 
         producerThreads.forEach(Thread::start);
         consumerThreads.forEach(Thread::start);

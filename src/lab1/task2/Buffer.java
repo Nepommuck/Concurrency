@@ -4,6 +4,7 @@ import java.util.Optional;
 
 public class Buffer {
     private Optional<String> memory = Optional.empty();
+
     public synchronized void put(String message) {
         try {
             while (memory.isPresent())
