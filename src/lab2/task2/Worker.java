@@ -1,5 +1,7 @@
 package lab2.task2;
 
+import common.ThreadRandomSleep;
+
 public class Worker extends Thread {
     private final Shop shop;
 
@@ -9,7 +11,7 @@ public class Worker extends Thread {
 
     public void addCart() {
         Logger.log("WORKER", "Adds cart to the shop");
-        shop.returnCart();
+        shop.addCartToPool();
     }
 
     @Override

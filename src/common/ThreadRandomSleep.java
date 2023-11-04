@@ -1,4 +1,4 @@
-package lab2.task2;
+package common;
 
 public class ThreadRandomSleep {
     private static double secondsToMiliseconds(double seconds) {

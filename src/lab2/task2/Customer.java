@@ -1,5 +1,7 @@
 package lab2.task2;
 
+import common.ThreadRandomSleep;
+
 public class Customer extends Thread {
     private final Shop shop;
     private final String name;
