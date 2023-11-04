@@ -1,6 +1,6 @@
 package lab3.task1;
 
-import common.ThreadRandomSleep;
+import common.ThreadSleep;
 import common.TimeLogger;
 
 public class Printer {
@@ -12,7 +12,7 @@ public class Printer {
 
     public void print(String message) {
         TimeLogger.log(this.name + ": Starts printing...");
-        ThreadRandomSleep.sleep(1.5, 5);
+        ThreadSleep.randomSleep(1.5, 5);
         TimeLogger.log(this.name + " >> \"" + message + "\"\n");
     }
 }

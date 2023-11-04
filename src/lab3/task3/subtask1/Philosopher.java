@@ -1,6 +1,6 @@
 package lab3.task3.subtask1;
 
-import common.ThreadRandomSleep;
+import common.ThreadSleep;
 import common.TimeLogger;
 
 import static lab3.task3.common.Direction.Left;
@@ -16,12 +16,12 @@ public class Philosopher implements Runnable {
     }
 
     private void doPrivateStuff() {
-        ThreadRandomSleep.sleep(0.1, 1);
+        ThreadSleep.randomSleep(0.1, 1);
     }
 
     private void eat() {
         TimeLogger.log("Philosopher " + philosopherNumber + " starts eating");
-        ThreadRandomSleep.sleep(1, 2);
+        ThreadSleep.randomSleep(1, 2);
         TimeLogger.log("Philosopher " + philosopherNumber + " finished eating");
     }
 
@@ -30,7 +30,7 @@ public class Philosopher implements Runnable {
         while (true) {
             doPrivateStuff();
             forks.take(philosopherNumber, Left);
-            ThreadRandomSleep.sleep(0.3, 1);
+            ThreadSleep.randomSleep(0.3, 1);
             forks.take(philosopherNumber, Right);
 
             eat();
