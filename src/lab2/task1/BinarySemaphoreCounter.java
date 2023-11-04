@@ -4,6 +4,7 @@ import lab1.task1.Counter;
 
 public class BinarySemaphoreCounter extends Counter {
     private final BinarySemaphore semaphore = new BinarySemaphore();
+
     @Override
     public void increment() {
         semaphore.lock();

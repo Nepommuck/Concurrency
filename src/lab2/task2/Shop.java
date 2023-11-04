@@ -27,9 +27,10 @@ public class Shop extends Thread {
         semaphore.release();
         log("Cart added to pool. " + currentCartsMessage() + " carts free");
     }
+
     public void returnCart() {
         semaphore.release();
-        log("Cart returned. "  + currentCartsMessage() + " carts free");
+        log("Cart returned. " + currentCartsMessage() + " carts free");
     }
 
     @Override
