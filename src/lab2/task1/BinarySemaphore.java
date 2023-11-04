@@ -6,7 +6,7 @@ import static lab2.task1.BinarySemaphore.SemaphoreState.CLOSED;
 import static lab2.task1.BinarySemaphore.SemaphoreState.OPEN;
 
 public class BinarySemaphore implements Semaphore {
-    enum SemaphoreState { OPEN, CLOSED }
+    enum SemaphoreState {OPEN, CLOSED}
 
     private SemaphoreState state = OPEN;
 

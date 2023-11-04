@@ -1,6 +1,6 @@
 package lab2.task2;
 
-import common.ThreadRandomSleep;
+import common.ThreadSleep;
 
 public class Worker extends Thread {
     private final Shop shop;
@@ -16,7 +16,7 @@ public class Worker extends Thread {
 
     @Override
     public void run() {
-        ThreadRandomSleep.sleep(10, 20);
+        ThreadSleep.randomSleep(10, 20);
         addCart();
     }
 }
