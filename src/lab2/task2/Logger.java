@@ -1,7 +1,11 @@
 package lab2.task2;
 
+import common.TimeLogger;
+
 public class Logger {
     public static void log(String name, String message) {
-        System.out.printf("%10s: %s%n", name, message);
+        TimeLogger.log(
+          String.format("%10s: %s", name, message)
+        );
     }
 }
