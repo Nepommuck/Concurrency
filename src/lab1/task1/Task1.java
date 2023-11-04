@@ -13,7 +13,7 @@ public class Task1 {
 
         thread1.join();
         thread2.join();
-        System.out.println("Unsynchronized counter after operations: " +  unsynchronizedCounter.getValue());
+        System.out.println("Unsynchronized counter after operations: " + unsynchronizedCounter.getValue());
 
         Counter synchronizedCounter = new SynchronizedCounter();
         Thread thread3 = new CounterThread(synchronizedCounter, +NUMBER_OF_OPERATIONS);
@@ -24,6 +24,6 @@ public class Task1 {
 
         thread3.join();
         thread4.join();
-        System.out.println("Synchronized counter after operations: " +  synchronizedCounter.getValue());
+        System.out.println("Synchronized counter after operations: " + synchronizedCounter.getValue());
     }
 }

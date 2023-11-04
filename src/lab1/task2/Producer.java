@@ -10,6 +10,7 @@ public class Producer implements Runnable {
     public Producer(Buffer buffer, int numberOfOperations) {
         this(buffer, numberOfOperations, Optional.empty());
     }
+
     public Producer(Buffer buffer, int numberOfOperations, Optional<String> name) {
         this.buffer = buffer;
         this.numberOfOperations = numberOfOperations;
@@ -17,7 +18,7 @@ public class Producer implements Runnable {
     }
 
     public void run() {
-        for(int i = 0; i < numberOfOperations; i++) {
+        for (int i = 0; i < numberOfOperations; i++) {
             String newMessage = "Message " + i;
             buffer.put(newMessage);
             System.out.println(name + ": Put message \"" + newMessage + "\"");
