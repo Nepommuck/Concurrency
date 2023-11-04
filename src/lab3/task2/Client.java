@@ -1,7 +1,7 @@
 package lab3.task2;
 
+import common.ThreadSleep;
 import common.TimeLogger;
-import common.ThreadRandomSleep;
 
 public class Client implements Runnable {
     private final int pairNumber;
@@ -17,12 +17,12 @@ public class Client implements Runnable {
     }
 
     private void doPrivateStuff() {
-        ThreadRandomSleep.sleep(2, 15);
+        ThreadSleep.randomSleep(2, 15);
     }
 
     private void eat() {
         TimeLogger.log("Client from pair " + pairNumber + " starts eating");
-        ThreadRandomSleep.sleep(3, 4);
+        ThreadSleep.randomSleep(3, 4);
         TimeLogger.log("Client from pair " + pairNumber + " finished eating");
     }
 
