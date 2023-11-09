@@ -13,7 +13,6 @@ public class PrinterMonitor {
 
     private final Lock lock = new ReentrantLock();
     private final Condition notFull = lock.newCondition();
-    private final Condition notEmpty = lock.newCondition();
 
     PrinterMonitor(int numberOfPrinters) {
         List<Printer> initialPrinters = IntStream.range(0, numberOfPrinters)
