@@ -40,7 +40,7 @@ var Waiter = function () {
 
 Waiter.prototype.acquire = function (cb, totalWaitTime = 0) {
   if (this.currentlyWaiting >= this.maxWaiting) {
-    const waitTime = 100
+    const waitTime = 100;
     setTimeout(() => this.acquire(cb, totalWaitTime + waitTime), waitTime);
   } else {
     this.currentlyWaiting++;
@@ -68,11 +68,15 @@ PersistenceManager.prototype.logResults = function () {
 };
 
 PersistenceManager.prototype.saveResultsToFile = function (filename) {
-  fs.writeFile(`results/${filename}`, JSON.stringify(this.totalWaitTimes), (err) => {
-    if (err) {
-      console.error(err);
+  fs.writeFile(
+    `results/${filename}`,
+    JSON.stringify(this.totalWaitTimes),
+    (err) => {
+      if (err) {
+        console.error(err);
+      }
     }
-  });
+  );
 };
 
 const PERSISTENCE_MANAGER = new PersistenceManager();
