@@ -29,3 +29,6 @@ bin/
 .DS_Store
 /.idea/
 /Concurrency.iml
+
+__pycache__/
+*.zip
