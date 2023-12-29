@@ -18,6 +18,7 @@ Fork.prototype.acquire = function (cb, waitTime = 1) {
   // 2. gdy proba jest nieudana, zwieksza czas oczekiwania dwukrotnie
   //    i ponawia probe itd.
   if (this.state != 0) {
+    console.log("Waiting " + waitTime + "ms to acquire fork")
     setTimeout(() => this.acquire(cb, 2 * waitTime), waitTime);
   } else {
     this.state = 1;
